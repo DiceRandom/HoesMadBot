@@ -3,4 +3,4 @@ A Discord bot that replys with and image of hoes mad when a user curses. Can do 
 And also &help. For version number and my username.
 
 
-https://bit.ly/2NdCoKe to add bot
+https://discordbots.org/bot/275469962968301571 to add bot
