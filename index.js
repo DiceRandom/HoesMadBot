@@ -2,7 +2,7 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client();
 const prefix = '&';
-const token = 'Mjc1NDY5OTYyOTY4MzAxNTcx.XRLpSA.CdZXXEKw9LUQrjDD7R2W6VwP53I';
+const token = 'PLACETOKENHERE';
 var currentConnectedServers = 0; // 0 byt default
 
 bot.on('ready', () =>{
