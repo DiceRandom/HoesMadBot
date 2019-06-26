@@ -25,36 +25,9 @@ bot.on('message', message=>{
     //if(message.author.role.name == "Owner"){
     //	message.reply(" WOAH TOUGH GUY");
     //}
-
-    if(message.content === ("fuck")){
-     const hmImage = new Discord.Attachment("https://i.ytimg.com/vi/Go1H4jB8Baw/hqdefault.jpg");
-	message.channel.send(hmImage);
-    }
-    if(message.content === ("Fuck")){
-		const hmImage = new Discord.Attachment("https://i.ytimg.com/vi/Go1H4jB8Baw/hqdefault.jpg");
-	message.channel.send(hmImage);;
-    }
-
-    if(message.content === ("Fuck you")){
-		const hmImage = new Discord.Attachment("https://i.ytimg.com/vi/Go1H4jB8Baw/hqdefault.jpg");
-	message.channel.send(hmImage);
-    }
-     if(message.content === ("fuck you")){
-		const hmImage = new Discord.Attachment("https://i.ytimg.com/vi/Go1H4jB8Baw/hqdefault.jpg");
-	message.channel.send(hmImage);
-    }
-
-    if(message.content === ("hoes mad")){
-		const hmImage = new Discord.Attachment("https://i.ytimg.com/vi/Go1H4jB8Baw/hqdefault.jpg");
-	message.channel.send(hmImage);
-    }
-    if(message.content === ("Hoes mad")){
-		const hmImage = new Discord.Attachment("https://i.ytimg.com/vi/Go1H4jB8Baw/hqdefault.jpg");
-	message.channel.send(hmImage);
-    }
-    if(message.content === ("Hoes Mad")){
-		const hmImage = new Discord.Attachment("https://i.ytimg.com/vi/Go1H4jB8Baw/hqdefault.jpg");
-	message.channel.send(hmImage);
+	
+    if ['fuck you', 'fuck', 'hoes mad'].includes(message.content.toLowerCase()) {
+	message.channel.send(new Discord.Attachment("https://i.ytimg.com/vi/Go1H4jB8Baw/hqdefault.jpg"));
     }
 
     // don't mind this i was too lazy to make a better system
