@@ -26,7 +26,7 @@ bot.on('message', message=>{
     //	message.reply(" WOAH TOUGH GUY");
     //}
 	
-    if ['fuck you', 'fuck', 'hoes mad'].includes(message.content.toLowerCase()) {
+    if (['fuck you', 'fuck', 'hoes mad']).includes(message.content.toLowerCase()) {
 	message.channel.send(new Discord.Attachment("https://i.ytimg.com/vi/Go1H4jB8Baw/hqdefault.jpg"));
     }
 
