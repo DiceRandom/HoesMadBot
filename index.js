@@ -3,10 +3,7 @@ const Discord = require("discord.js");
 const bot = new Discord.Client();
 const prefix = '&';
 const token = 'PLACETOKENHERE';
-const hmImage = new Discord.Attachment("https://i.ytimg.com/vi/Go1H4jB8Baw/hqdefault.jpg");
 var currentConnectedServers = 0; // 0 byt default
-
-var inputsMessages = ["fuck", "Fuck", "Fuck you", "hoes made", "Hoes mad", "Hoes Mad"];
 
 bot.on('ready', () =>{
 	currentConnectedServers = 0;
@@ -29,10 +26,9 @@ bot.on('message', message=>{
     //	message.reply(" WOAH TOUGH GUY");
     //}
 	
-    if(message.content === inputsMessages[index]){
-    	message.channel.send(hmImage);
+    if (['fuck you', 'fuck', 'hoes mad']).includes(message.content.toLowerCase()) {
+	message.channel.send(new Discord.Attachment("https://i.ytimg.com/vi/Go1H4jB8Baw/hqdefault.jpg"));
     }
-
 
     // don't mind this i was too lazy to make a better system
 	
