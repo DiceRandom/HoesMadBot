@@ -1,12 +1,14 @@
 
 const Discord = require("discord.js");
+const auth = require("./auth.json");
 const bot = new Discord.Client();
 const prefix = '&';
-const token = 'PLACETOKENHERE';
+const token = auth.token;
 var currentConnectedServers = 0; // 0 byt default
+var work = true;
 
 bot.on('ready', () =>{
-	currentConnectedServers = 0;
+	work = true;
 	console.log("Bot Online.");
     getCurrentServers();
     setCurrentServers();
@@ -20,15 +22,26 @@ bot.on('message', message=>{
         return
     }
 
-    
+	arrayOfMessages = ['fuck you', "fuck me" ,"hoes mad", "fuck all of you"];    
 
     //if(message.author.role.name == "Owner"){
     //	message.reply(" WOAH TOUGH GUY");
     //}
-	
-    if (['fuck you', 'fuck', 'hoes mad']).includes(message.content.toLowerCase()) {
-	message.channel.send(new Discord.Attachment("https://i.ytimg.com/vi/Go1H4jB8Baw/hqdefault.jpg"));
-    }
+
+    
+
+
+    if(work){
+    if(message.content != null){
+	    for(var i = 0; i< arrayOfMessages.length; i++){
+	    	if(message.content.toLowerCase().includes(arrayOfMessages[i])){
+	    		message.channel.send(new Discord.Attachment("https://i.ytimg.com/vi/Go1H4jB8Baw/hqdefault.jpg"));
+				console.log("=  someone used a used a message")
+				setCurrentServers();
+	    	}
+	    }
+	}
+	}
 
     // don't mind this i was too lazy to make a better system
 	
@@ -40,24 +53,31 @@ bot.on('message', message=>{
 		case 'info':
 			if(args[1] === "version"){
 				message.channel.send("umm, testing..?");
+				console.log("= someone asked about version")
 			}else if(args[1] === "creator"){
-				message.channel.send("ran.dice#9734");
-			}else if(args[1] === "?"){
-				message.channel.send("Pretty much, (&info version) for version number.");
-				message.channel.send("And (&info creator) for creator.");
-			}else{
-				message.channel.send("Sorry, what? do, &info ?");
+				message.channel.send("@ran.dice#9734");
+				console.log("= someone asked about you")
 			}
 			break;
+		case 'stop':
+			work = false;
+			message.channel.send(" Hoes disabled");
+			console.log("= someone disabled your hoes")
+		break;
 
-		
+		case 'start':
+			work = true;
+			console.log("= someone enabled your hoes :)")
+		break;
+	
 	}
 }
 })
 
 function setCurrentServers() {
+		getCurrentServers()
 		if(currentConnectedServers = 1){
-    		bot.user.setActivity("with hoes that are mad on " + currentConnectedServers + " server.")
+    		bot.user.setActivity("with hoes that are mad on a server.")
 		}else if(currentConnectedServers > 1){
 			bot.user.setActivity("with hoes that are mad on " + currentConnectedServers + " servers!")
 		}else{
