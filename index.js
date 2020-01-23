@@ -1,6 +1,7 @@
 
 const Discord = require("discord.js");
 const auth = require("./auth.json");
+const infoJson = require("./package.json");
 const bot = new Discord.Client();
 const prefix = '&';
 const token = auth.token;
@@ -52,7 +53,7 @@ bot.on('message', message=>{
 	switch(args[0]){
 		case 'info':
 			if(args[1] === "version"){
-				message.channel.send("umm, testing..?");
+				message.channel.send(package.version);
 				console.log("= someone asked about version")
 			}else if(args[1] === "creator"){
 				message.channel.send("@ran.dice#9734");
